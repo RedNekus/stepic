@@ -9,9 +9,11 @@ def server(conn, a):
 s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 s.bind(('0.0.0.0', 2222))
 s.listen(1)
-for i in range(9):
+while True:
         connector, address = s.accept()
-        print('Connection', i, address)
-        t = threading.Thread(target=server, args=(connector, address))
-        t.start()
+        print('Connection', address)
+        if address:
+                t = threading.Thread(target=server, args=(connector, address))
+                t.start()
+        else: break
 
