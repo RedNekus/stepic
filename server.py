@@ -3,7 +3,7 @@ import threading
 def server(conn, a):
         while True:
                 data = conn.recv(1024)
-                if not data or data == 'close': break
+                if not data or data == b'close': break
                 conn.send(data)
         conn.close()
 s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
