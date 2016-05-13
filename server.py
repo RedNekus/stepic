@@ -1,5 +1,6 @@
 import socket
-def server(conn):
+import threading
+def server(conn, addr):
         while True:
                 data = conn.recv(1024)
                 if not data or data == 'close': break
