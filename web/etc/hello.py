@@ -1,6 +1,14 @@
-pythonpath = '/home/box/web'
-bind = '0.0.0.0:8080'
-workers = 4
+CONFIG = {
+    'mode': 'wsgi',
+    'working_dir' : '/home/box/web/hello.py',
+    'args' :(
+        '--bind='0.0.0.0:8080',
+        '--workers = 4',
+        '--timeout=60',
+        'hello.app'
+    )
+}
+
 def wsgi_application(env, start_response):
     status = '200 OK'
     headers = [('Content-Type', 'text/plain')]
