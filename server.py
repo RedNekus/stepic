@@ -12,8 +12,6 @@ s.listen(1)
 while True:
         connector, address = s.accept()
         print('Connection', address)
-        if address:
-                t = threading.Thread(target=server, args=(connector, address))
-                t.start()
-        else: break
+        t = threading.Thread(target=server, args=(connector, address))
+        t.start()
 
