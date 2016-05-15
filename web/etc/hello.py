@@ -10,4 +10,4 @@ def wsgi_application(env, start_response):
         key, val = params[i].split('=')
         body = body + key + '=' + val + '\n'
     start_response(status, headers)
-    return body
+    return [body]
