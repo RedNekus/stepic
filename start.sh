@@ -1,5 +1,6 @@
 #!/bin/bash
-cp -r /home/box/stepic/web /home/box/
+#cp -r /home/box/stepic/web /home/box/
+mv /home/box/stepic/ /home/box/web/
 sudo ln -sf /media/box/web/etc/nginx.conf  /etc/nginx/sites-enabled/default
 sudo /etc/init.d/nginx restart
 sudo nginx -t
