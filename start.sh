@@ -15,7 +15,9 @@ sudo nginx -t
 cd ../
 chmod -R 777 web/*
 cd web/ask
-gunicorn ask.wsgi:application --bind 0.0.0.0:8000
+gunicorn ask.wsgi:application --bind 0.0.0.0:8000 --daemon
+cd /home/box/web
+gunicorn -b 0.0.0.0:8080 hello:app --daemon
 
 #gunicorn -c /home/box/web/etc/hello.py hello:app --daemon
 #gunicorn -c /home/box/web/etc/django.py wsgi --daemon
