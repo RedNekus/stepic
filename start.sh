@@ -10,7 +10,7 @@ sudo nginx -t
 #gunicorn -c /etc/gunicorn.d/hello.py hello
 cd /home/box/web
 sudo gunicorn -b 0.0.0.0:8080 hello:app
-cd ../web/ask
+cd ask
 sudo gunicorn ask.wsgi:application --bind 0.0.0.0:8000
 
 #gunicorn -c /home/box/web/etc/hello.py hello:app --daemon
