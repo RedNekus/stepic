@@ -1,5 +1,7 @@
 #!/bin/bash
 #cp -r /home/box/stepic/web /home/box/
+sudo pip3 install django
+sudo pip3 install gunicorn
 mv /home/box/stepic/ /home/box/web/
 sudo ln -sf /media/box/web/etc/nginx.conf  /etc/nginx/sites-enabled/default
 sudo /etc/init.d/nginx restart
@@ -10,7 +12,9 @@ sudo nginx -t
 #gunicorn -c /etc/gunicorn.d/hello.py hello
 #cd /home/box/web
 #sudo gunicorn -b 0.0.0.0:8080 hello:app
-cd ../web/ask
+cd ../
+chmod -R 777 web/*
+cd web/ask
 gunicorn ask.wsgi:application --bind 0.0.0.0:8000
 
 #gunicorn -c /home/box/web/etc/hello.py hello:app --daemon
