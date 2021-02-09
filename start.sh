@@ -26,5 +26,5 @@ sudo /etc/init.d/nginx restart
 #gunicorn -c /home/box/web/etc/django.py wsgi --daemon
 sudo ln -sf /home/box/web/etc/gunicorn.conf  /etc/gunicorn.d/test
 #sudo gunicorn -c /home/box/web/etc/gunicorn-django.conf ask.wsgi:application
-cd /home/box/web
-gunicorn --bind 0.0.0.0:8000 ask.wsgi:application
+#cd /home/box/web
+#gunicorn --bind 0.0.0.0:8000 ask.wsgi:application
