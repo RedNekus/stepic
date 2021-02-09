@@ -8,7 +8,7 @@ sudo /etc/init.d/nginx restart
 sudo nginx -t
 
 #sudo ln -sf /media/sf_web/etc/hello.py /etc/gunicorn.d/hello.py
-#sudo /etc/init.d/gunicorn restart﻿﻿
+#sudo /etc/init.d/gunicorn restart
 #gunicorn -c /etc/gunicorn.d/hello.py hello
 #cd /home/box/web
 #sudo gunicorn -b 0.0.0.0:8080 hello:app
